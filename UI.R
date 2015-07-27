@@ -1,4 +1,4 @@
-library(shiny) 
+library(shiny)   
 ##User interface
 shinyUI(fluidPage(
 ##Name of app
@@ -8,7 +8,7 @@ shinyUI(fluidPage(
         sidebarPanel(
             h4("Input your details:"),
             numericInput("weight", "Weight, kg:", 0),
-            numericInput("height", "Height, m:", 0),
+            numericInput("height", "Height, cm:", 0),
             h4("BMI Calculation:"),
             p("= Weight(kg) / Height(m)^2"),
             img(src="BMI_Eqn.png", height = 72, width = 201)
@@ -18,7 +18,7 @@ shinyUI(fluidPage(
             textOutput("text1"),
             h4("BMI:"),
             verbatimTextOutput("BMItext"),
-            h4("BMI Classification shown with Red Dot:"),            
+            h4("BMI classification:"),            
             plotOutput(outputId = "main_plot", height = "400px")
         )
     )

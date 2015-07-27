@@ -1,4 +1,4 @@
-library(shiny) 
+library(shiny)  
 ## Body Mass Index chart & its parameters
 ht = seq(1.2,2.2, length.out=1000)
 wt = seq(40,140, length.out=1000)
@@ -6,14 +6,14 @@ wtht = expand.grid(x=ht, y=wt)
 bmi = function(h,w) { w /(h*h)}
 bmiwtht = matrix(bmi(wtht$x,wtht$y),length(ht),length(wt))
 ##Server
-shinyServer(
+shinyServer( 
     function(input, output) {
 #BMI
     BMI <- reactive({
-        round( input$weight / input$height^2, digits=1 )
+        round( input$weight / (input$height/100)^2, digits=1 )
     })
     output$text1 <- renderText({
-        paste("(Weight", input$weight, "kg, and Height", input$height, "m)")
+        paste("(Weight", input$weight, "kg, and Height", input$height, "cm)")
     })
     output$BMItext <- renderText({
         BMI()
@@ -21,7 +21,7 @@ shinyServer(
     output$main_plot <- renderPlot({
         par(mar=c(4,4,0,0))
         contour(ht,wt,bmiwtht,levels = c(18.5,25,30), drawlabels=FALSE,
-                xlab="Height (metres)",ylab="Weight (kgs)")
+                xlab="Height (m)",ylab="Weight (kgs)")
         text(1.4,90,"Obese",cex=2,srt=45)
         text(1.71,80,"Overweight",cex=2,srt=32)
         text(1.75,67,"Normal",cex=2,srt=28)
