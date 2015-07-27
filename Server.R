@@ -21,7 +21,7 @@ shinyServer(
     output$main_plot <- renderPlot({
         par(mar=c(4,4,0,0))
         contour(ht,wt,bmiwtht,levels = c(18.5,25,30), drawlabels=FALSE,
-                xlab="Height (m)",ylab="Weight (kgs)")
+                xlab="Height (m)",ylab="Weight (kg)")
         text(1.4,90,"Obese",cex=2,srt=45)
         text(1.71,80,"Overweight",cex=2,srt=32)
         text(1.75,67,"Normal",cex=2,srt=28)
