@@ -27,7 +27,7 @@ shinyServer(
         text(1.75,67,"Normal",cex=2,srt=28)
         text(1.95,54,"Underweight",cex=2,srt=22)
 ##BMI observation
-        points(input$height, input$weight, pch = 21, bg = "red", cex = 2)
+        points((input$height)/100, input$weight, pch = 21, bg = "red", cex = 2)
     })
     }
 )
