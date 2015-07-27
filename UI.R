@@ -10,8 +10,7 @@ shinyUI(fluidPage(
             numericInput("weight", "Weight, kg:", 60),
             numericInput("height", "Height, cm:", 160),
             h4("BMI Calculation:"),
-            p("= Weight(kg) / Height(m)^2"),
-            img(src="BMI_Eqn.png", height = 72, width = 201)
+            p("= Weight(kg) / Height(m)^2")
         ),
 ##Plotting output
         mainPanel(
