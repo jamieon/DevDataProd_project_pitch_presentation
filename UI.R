@@ -7,8 +7,8 @@ shinyUI(fluidPage(
     sidebarLayout(
         sidebarPanel(
             h4("Input your details:"),
-            numericInput("weight", "Weight, kg:", 0),
-            numericInput("height", "Height, cm:", 0),
+            numericInput("weight", "Weight, kg:", 60),
+            numericInput("height", "Height, cm:", 160),
             h4("BMI Calculation:"),
             p("= Weight(kg) / Height(m)^2"),
             img(src="BMI_Eqn.png", height = 72, width = 201)
